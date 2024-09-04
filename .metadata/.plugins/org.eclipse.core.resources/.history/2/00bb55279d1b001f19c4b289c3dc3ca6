@@ -1,0 +1,39 @@
+function viewAction() {
+    var bookId = $("#bookId").val();
+    var memRegno = $("#mem_regno").val();
+
+	console.log("Book ID:", bookId);
+    console.log("Member Registration Number:", memRegno);
+    
+    if (bookId && memRegno) {
+        $.ajax({
+            url: '/get-book-member-details',
+            type: 'POST',
+            data: {
+                bookId: bookId,
+                mem_regno: memRegno 
+            },
+            success: function(response) {
+                if (response.success) {
+					
+					console.log("Book Title:", response.bookTitle);
+        console.log("Member Name:", response.memberName);
+        console.log("Issue Date:", response.issueDate);
+        console.log("Due Date:", response.dueDate);
+        
+                    $("#title").val(response.bookTitle);
+                    $("#member").val(response.memberName);
+                    $("#issueDate").val(response.issueDate);
+                    $("#dueDate").val(response.dueDate);
+                } else {
+                    alert(response.message);
+                }
+            },
+            error: function() {
+                alert("Error fetching details.");
+            }
+        });
+    } else {
+        alert("Please enter both Book ID and Member Registration Number.");
+    }
+}

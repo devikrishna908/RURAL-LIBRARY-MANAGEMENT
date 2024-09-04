@@ -1,0 +1,5 @@
+package com.luminar.librarymanagement.repository;
+
+public class BookRepository extends JpaRepository{
+
+}

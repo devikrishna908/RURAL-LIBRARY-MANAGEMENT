@@ -1,0 +1,41 @@
+package com.luminar.librarymanagement.entity;
+
+import java.time.LocalDate;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="issue_details")
+public class IssueDetails {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer issue_id;
+    
+    @Column(name = "reg_no")
+    private Integer memberRegNo;
+
+    @Column(name = "book_id")
+    private Integer bookId;
+
+    @Column(name = "issue_date")
+    private LocalDate issueDate;
+
+    @Column(name = "due_date")
+    private LocalDate dueDate;
+
+    @Column(name = "return_date")
+    private LocalDate returnDate;
+
+    @Column(name = "fine")
+    private LocalDate fine;
+
+    @Column(name = "return_status")
+    private LocalDate returnStatus;
+
+}

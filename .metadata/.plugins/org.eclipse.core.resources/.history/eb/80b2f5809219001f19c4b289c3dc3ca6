@@ -1,0 +1,48 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AddBook</title>
+<link rel="stylesheet" href="css/new-book.css">
+</head>
+<body>
+	<div class="container">
+		<h2>ADD NEW STAFF</h2>
+		<div class="form-container">
+			<form name="create" method="post" action="/add-book"
+				onsubmit="return validateForm()">
+
+
+				<label for="service">Choose Category</label> 
+				<select id="service" name="service">
+					<option value="nil">Select Category</option>
+					<option value="nil">NOVEL</option>
+					<option value="nil">ARTICLES</option>
+					<option value="nil">BIOGRAPHY</option>
+					<option value="nil">SHORT STORIES</option>
+					<option value="nil">TRAVELOGUE</option>
+					<option value="nil">CLASSICS</option>
+					<option value="nil">COMICS</option>
+					<option value="nil">EDUCATION AND STUDY AID</option>
+					<option value="nil">HEALTH AND FITNESS</option>
+					<option value="nil">DRAMA</option>
+					<option value="nil">SCIENCE FICTION</option>
+					<option value="nil">NON FICTION</option>
+					<option value="nil">CHILDREN'S LITERATURE</option>
+					<option value="nil">NON FICTION</option>
+					
+				</select> 
+				
+				<div class="input-button">
+					<input type="submit" value="SAVE" class="insert"> 
+					<input type="button" value="CANCEL" class="cancel" onclick="cancelAction()"> <br>
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+</body>
+</html>

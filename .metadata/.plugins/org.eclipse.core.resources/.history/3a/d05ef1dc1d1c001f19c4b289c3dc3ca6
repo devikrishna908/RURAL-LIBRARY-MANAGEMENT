@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Return Book</title>
+<link rel="stylesheet" href="css/issue-style.css">
+<script src="js/return-book.js" type="text/javascript"></script>
+</head>
+<body>
+<body>
+	<div class="container">
+		<h2>RETURN YOUR BOOKS</h2>
+		<div class="form-container">
+            <form name="create" method="post" action="/return-book" onsubmit="return validateForm()">
+        		
+		        <label for="mem_regno">ENTER MEMBER REGISTRATION NUMBER</label>
+    		    <input type="text" id="mem_regno" name="mem_regno"><br>
+
+    		    <input type="button" value="VIEW ISSUED BOOKS" class="view" onclick="viewAction()"><br>
+    		    
+			</form>
+		</div>
+		<div id="issued-books-container">
+
+        </div>
+	</div>
+
+</body>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+package com.luminar.librarymanagement.entity;
+
+import jakarta.persistence.Entity;
+
+@Entity
+@Table(name="issue_details")
+public class IssueDetails {
+
+}

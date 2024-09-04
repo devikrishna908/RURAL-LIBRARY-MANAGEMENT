@@ -1,0 +1,16 @@
+package com.luminar.librarymanagement.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.luminar.librarymanagement.entity.IssueDetails;
+
+public interface IssueDetailsRepository extends JpaRepository<IssueDetails, Integer>{
+	
+	@Query("SELECT COUNT(issue_id) FROM IssueDetails WHERE bookId = :bookId AND returnDate IS NULL")
+    Integer countIssuedBooksByBookId(@Param("bookId")Integer bookId);
+
+	@Query("SELECT COUNT(issue_id) FROM IssueDetails WHERE mem_regno = :memberId AND returnDate IS NULL")
+    Integer countIssuedBooksToMember(@Param("memberId") Integer memberId);
+}

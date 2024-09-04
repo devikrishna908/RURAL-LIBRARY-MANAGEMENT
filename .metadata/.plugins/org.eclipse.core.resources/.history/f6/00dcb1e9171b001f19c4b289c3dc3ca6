@@ -1,0 +1,14 @@
+package com.luminar.librarymanagement.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.luminar.librarymanagement.service.BooksService;
+
+@Controller
+public class MembersController {
+	
+	@Autowired
+    private BooksService bookService;
+
+}

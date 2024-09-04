@@ -1,0 +1,38 @@
+package com.luminar.librarymanagement.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.luminar.librarymanagement.entity.Books;
+import com.luminar.librarymanagement.service.BooksService;
+
+@Controller
+public class BooksController {
+
+	@Autowired
+    private BooksService bookService;
+    
+	@GetMapping("/view-books")
+    public ModelAndView getAllBooks() {
+		ModelAndView mav = new ModelAndView("admin-books");
+		List<Books> booksList = bookService.getAllBooks();
+		mav.addObject("booksList", booksList);
+		return mav;
+    }
+	
+	@GetMapping("/new-book")
+	public String addNewBookPageLoad() {
+        return "add-book";
+    }
+
+	@GetMapping("/save-book")
+	public String savebook() {
+        return "add-book";
+    }
+
+	
+}

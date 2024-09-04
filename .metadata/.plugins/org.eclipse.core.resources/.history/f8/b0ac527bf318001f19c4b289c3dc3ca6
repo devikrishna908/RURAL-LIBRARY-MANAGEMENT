@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Home</title>
+<link rel="stylesheet" href="css/admin-welcome.css">
+</head>
+<body>
+	<h1>
+		Welcome Admin,
+	</h1>
+	<div class="center">
+        <img class="admin" src="images/admin.jpg">
+    </div>
+</body>
+</html>

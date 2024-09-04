@@ -1,0 +1,43 @@
+    
+function viewAction() {
+    var bookId = $("#bookId").val();
+    var memRegno = $("#mem_regno").val();
+
+    if (bookId && memRegno) {
+        $.ajax({
+            url: '/get-book-member-details',
+            type: 'POST',
+            data: {
+                bookId: bookId,
+                memRegno: memRegno
+            },
+            success: function(response) {
+                if (response.success) {
+                    if (response.bookTitle && response.memberName && response.issueDate && response.dueDate) {
+                        $("#title").val(response.bookTitle);
+                        $("#member").val(response.memberName);
+                        $("#issueDate").val(response.issueDate);
+                        $("#dueDate").val(response.dueDate);
+                    } else {
+                        alert("Incomplete data received from the server.");
+                    }
+                } else {
+                    alert(response.message);
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status === 0) {
+                    alert('Network error. Please check your internet connection.');
+                } else if (jqXHR.status === 404) {
+                    alert('Requested page not found (404).');
+                } else if (jqXHR.status === 500) {
+                    alert('Internal Server Error (500). Please try again later.');
+                } else {
+                    alert('Error fetching details: ' + textStatus + ', ' + errorThrown);
+                }
+            }
+        });
+    } else {
+        alert("Please enter both Book ID and Member Registration Number.");
+    }
+}

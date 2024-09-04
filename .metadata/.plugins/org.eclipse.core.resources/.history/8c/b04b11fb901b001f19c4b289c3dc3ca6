@@ -1,0 +1,21 @@
+package com.luminar.librarymanagement.service;
+
+import com.luminar.librarymanagement.entity.Books;
+import com.luminar.librarymanagement.entity.Members;
+
+public class IssueBookServiceImpl implements IssueBookService {
+
+	@Override
+	public Books findBookById(Integer bookId) {
+	}
+
+	@Override
+	public Members findMemberByRegNo(Integer regNo) {
+	}
+
+	@Override
+	public void issueBook(Integer bookId, Integer regNo) {
+		
+	}
+
+}

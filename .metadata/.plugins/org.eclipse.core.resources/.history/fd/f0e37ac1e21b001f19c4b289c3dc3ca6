@@ -1,0 +1,45 @@
+function validateForm() {
+    // Example validation logic
+    var bookId = document.getElementById('bookId').value;
+    var memRegno = document.getElementById('mem_regno').value;
+
+    if (bookId === "" || memRegno === "") {
+        alert("Both Book ID and Member Registration Number are required.");
+        return false;
+    }
+    return true;
+}
+
+function viewAction() {
+    var bookId = $("#bookId").val();
+    var memRegno = $("#mem_regno").val();
+
+    
+    if (bookId && memRegno) {
+        $.ajax({
+            url: '/get-book-member-details',
+            type: 'POST',
+            data: {
+                bookId: bookId,
+                memRegno: memRegno 
+            },
+            success: function(response) {
+                if (response.success) {
+					        
+                    $("#title").val(response.bookTitle);
+                    $("#member").val(response.memberName);
+                    $("#issueDate").val(response.issueDate);
+                    $("#dueDate").val(response.dueDate);
+                } else {
+                    alert(response.message);
+                }
+            },
+            error: function() {
+				 console.log("Error:", error);
+                alert("Error fetching details.");
+            }
+        });
+    } else {
+        alert("Please enter both Book ID and Member Registration Number.");
+    }
+}

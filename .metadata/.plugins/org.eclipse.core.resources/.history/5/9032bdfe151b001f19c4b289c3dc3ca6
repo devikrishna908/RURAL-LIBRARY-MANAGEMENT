@@ -1,0 +1,40 @@
+package com.luminar.librarymanagement.service;
+
+import java.util.List;
+
+import com.luminar.librarymanagement.entity.Members;
+import com.luminar.librarymanagement.repository.MembersRepository;
+
+public class MembersServiceImpl implements MembersService {
+
+	@Override
+	public List<Members> getAllMembers() {
+		return MembersRepository.findall();
+	}
+
+	@Override
+	public void saveBook(Members member) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteMemberById(Integer memberId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Members getBookById(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updateBook(Members member) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

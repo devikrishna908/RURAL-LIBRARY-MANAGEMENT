@@ -1,0 +1,60 @@
+package com.luminar.librarymanagement.service;
+
+import java.time.LocalDate;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.luminar.librarymanagement.entity.Books;
+import com.luminar.librarymanagement.entity.IssueDetails;
+import com.luminar.librarymanagement.entity.Members;
+import com.luminar.librarymanagement.repository.BooksRepository;
+import com.luminar.librarymanagement.repository.IssueDetailsRepository;
+import com.luminar.librarymanagement.repository.MembersRepository;
+
+public class IssueBookServiceImpl implements IssueBookService {
+
+	@Autowired
+	BooksRepository booksRepository;
+	
+	@Autowired
+	MembersRepository membersRepository;
+	
+	@Autowired
+	IssueDetailsRepository issueDetailsRepository;
+	
+	@Override
+	public Books findBookById(Integer bookId) {
+		return booksRepository.findById(bookId).orElse(null);
+	}
+
+	@Override
+	public Members findMemberByRegNo(Integer regNo) {
+		return membersRepository.findById(regNo).orElse(null);
+	}
+
+	@Override
+	public void issueBook(Integer bookId, Integer regNo) {
+		Books books = findBookById(bookId);
+		Members members = findMemberByRegNo(regNo);
+		
+		if(books != null && members != null) {
+			int issuedBooksCount = issueDetailsRepository.countIssuedBooksByBookId(bookId);
+			if(issuedBooksCount < books.getTotalCopies()) {
+				
+				LocalDate issueDate = LocalDate.now();
+				LocalDate dueDate = issueDate.plusWeeks(2);
+				
+				IssueDetails issueDetails = new IssueDetails();
+				issueDetails.setBookId(bookId);
+				issueDetails.setMemberRegNo(regNo);
+				issueDetails.set
+			}
+		}
+	}
+
+	@Override
+	public int countIssuedBooksByBookId(Integer bookId) {
+		return issueDetailsRepository.countIssuedBooksByBookId(bookId);
+	}
+
+}

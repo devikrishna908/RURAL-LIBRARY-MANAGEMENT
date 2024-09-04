@@ -1,0 +1,7 @@
+    // Function to update Available Copies when Total Copies value changes
+    function updateAvailableCopies() {
+        var totalCopies = parseInt(document.getElementById("total").value);
+        if (!isNaN(totalCopies)) {
+            document.getElementById("available").value = totalCopies;
+        }
+    }

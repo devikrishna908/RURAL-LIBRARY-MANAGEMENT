@@ -1,0 +1,8 @@
+package com.luminar.librarymanagement.repository;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class BookRepository extends JpaRepository{
+
+}

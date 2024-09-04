@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AddBook</title>
+<link rel="stylesheet" href="css/new-book.css">
+</head>
+<body>
+	<div class="container">
+		<h2>ADD NEW STAFF</h2>
+		<div class="form-container">
+			<form name="create" method="post" action="staff-add-action.jsp"
+				onsubmit="return validateForm()">
+
+				<label for="staffName">Staff Name</label> <input type="text"
+					name="staffName" id="staffName"> <label
+					for="qualification">Qualification</label> <input type="text"
+					name="qualification" id="qualification"> <label for="email">Email
+					ID</label> <input type="text" name="email" id="email"> <label
+					for="contact">Contact Number</label> <input type="text"
+					name="contact" id="contact"> <label for="address">Address</label>
+				<textarea name="address" id="address"></textarea>
+
+				<label for="service">Choose Service</label> <select id="service"
+					name="service">
+					<option value="nil">Select Service</option>
+				</select> <label for="uname">User Name</label> <input type="text"
+					name="uname" id="uname"> <label for="pass">Password</label>
+				<input type="password" name="pass" id="pass"> <label
+					for="cpass">Confirm Password</label> <input type="password"
+					name="cpass" id="cpass">
+
+				<div class="input-button">
+					<input type="submit" value="SAVE" class="insert"> <input
+						type="button" value="CANCEL" class="cancel"
+						onclick="cancelAction()"> <br>
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+</body>
+</html>

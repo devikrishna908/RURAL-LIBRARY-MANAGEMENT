@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AddBook</title>
+<link rel="stylesheet" href="css/new-book.css">
+</head>
+<body>
+	<div class="container">
+		<h2>ADD NEW STAFF</h2>
+		<div class="form-container">
+			<form name="create" method="post" action="/add-book"
+				onsubmit="return validateForm()">
+
+
+				<label for="service">Choose Service</label> 
+				<select id="service" name="service">
+					<option value="nil">Select Service</option>
+				</select> 
+				
+				<div class="input-button">
+					<input type="submit" value="SAVE" class="insert"> 
+					<input type="button" value="CANCEL" class="cancel" onclick="cancelAction()"> <br>
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+</body>
+</html>

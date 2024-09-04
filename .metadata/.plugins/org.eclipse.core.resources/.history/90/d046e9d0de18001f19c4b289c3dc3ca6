@@ -1,0 +1,33 @@
+package com.luminar.librarymanagement.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class HomeController {
+	
+	@GetMapping("/")
+	public String home() {
+        return "index";
+    }
+	
+    @GetMapping("/home") // Add this method to handle requests to /home
+    public String showHomePage() {
+        return "home"; // Assuming home.jsp is directly under webapp directory
+    }
+
+    @PostMapping("/login")
+    public String login(@RequestParam("username") String username, 
+                        @RequestParam("password") String password) {
+        // Your login logic here
+        if ("admin@gmail.com".equals(username) && "admin".equals(password)) {
+            return "redirect:/home"; 
+        } else {
+            return "redirect:/?error=true"; 
+        }
+    }
+	
+
+}

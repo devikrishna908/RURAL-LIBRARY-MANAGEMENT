@@ -1,0 +1,42 @@
+<%@ page language="java" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Library Management System</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="css/loginstyle.css">
+<script src="js/login_validation.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-message">
+            <h1>MADATHUMPADY GRAMEENA VAYANASHALA</h1>
+        </div>
+        
+        <div class="form-container">
+            <div class="form-box">
+                <form name="login" method="get" action="/login" onsubmit="return validate();">
+                    <br> <br>
+                    <div class="login-head">Enter Your Login Credentials!</div>
+
+                    <div class="input-icon">
+                        <i class="fas fa-user"></i> 
+                        <input type="text" name="username" placeholder="Email Id" id ="userName" ><br>
+                    </div>
+                    <div class="input-icon">
+                        <i class="fas fa-lock"></i> 
+                        <input type="password" name="password" placeholder="Password" id="password">
+                    </div>
+                    <br>
+                    <div class="input-button">
+                        <input type="submit" value="SIGN IN"> <br> <br>
+                        <a href="forgot.html">Forgot password?</a><br> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

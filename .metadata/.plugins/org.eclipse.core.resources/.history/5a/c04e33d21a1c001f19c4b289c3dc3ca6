@@ -1,0 +1,18 @@
+package com.luminar.librarymanagement.service;
+
+
+import com.luminar.librarymanagement.entity.Books;
+import com.luminar.librarymanagement.entity.Members;
+
+public interface IssueBookService {
+	
+	public Books findBookById(Integer bookId);
+	
+	public Members findMemberByRegNo(Integer regNo);
+	
+	public void issueBook(Integer bookId, Integer regNo);
+	
+	public Integer countIssuedBooksByBookId(Integer bookId);
+
+	public Integer countIssuedBooksToMember(Integer memberId);
+}

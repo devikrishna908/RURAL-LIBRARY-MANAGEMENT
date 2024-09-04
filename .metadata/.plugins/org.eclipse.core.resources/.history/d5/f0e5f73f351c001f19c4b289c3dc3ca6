@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/return-style.css">
+<script src="js/issue-book.js" type="text/javascript"></script>
+
+</head>
+<body>
+ <div class="container">
+	<form action="/return" class="info">
+		<h2>RETURN YOUR BOOK</h2><br>
+		<input type="hidden" name="issueId" value="${issueId}" />
+        <label>Book Title : <input type="text" name="title" value="${bookTitle}" readonly /></label><br><br>
+        <label>Member Name :<input type="text" name="member" value="${memberName}" readonly /></label><br><br>
+        <label>Issue Date: <input type="text" name="Issue" value="${issueDate}" readonly /></label><br><br>
+        <label>Due Date: <input type="text" name="dueDate" value="${dueDate}" readonly /></label><br><br>
+        <label>Return Date: <input type="text" name="returnDate" value="${returnDate}" readonly /></label><br><br>
+    	<label>Fine: <input type="text" name="fine" value="${fine}" readonly /></label><br><br>
+	    
+        <div class="input-button">
+             <input type="submit" value="RETURN" class="insert"> 
+             <input type="button" value="CANCEL" class="cancel" onclick="cancel()"> <br>
+        </div>
+        
+	</form> 
+	</div>   
+
+</body>
+</html>

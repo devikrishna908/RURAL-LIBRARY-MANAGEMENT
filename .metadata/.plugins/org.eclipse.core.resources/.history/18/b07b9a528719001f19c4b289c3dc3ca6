@@ -1,0 +1,9 @@
+package com.luminar.librarymanagement.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.luminar.librarymanagement.entity.Books;
+
+public interface BookRepository extends JpaRepository<Books, Integer>{
+
+}
